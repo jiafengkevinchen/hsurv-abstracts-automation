@@ -1,0 +1,108 @@
+\documentclass[10pt,twocolumn]{book}
+
+\usepackage[paperwidth=8.5in, paperheight=11in, margin=1in]{geometry}
+\usepackage{comment}
+\usepackage{chemfig}
+\usepackage{amsmath}
+\usepackage{xparse}
+\usepackage{tabularx}
+\usepackage{physics}
+
+\usepackage{needspace}
+\usepackage{marginnote}
+\usepackage{tgpagella}
+\usepackage{pxfonts}
+\usepackage{fancyhdr}
+\renewcommand*{\marginfont}{\sffamily\footnotesize}
+
+\usepackage{imakeidx}
+\usepackage{hyperref}
+\makeindex[intoc]
+
+% Abstract template
+\newenvironment{abstract}[9]{
+  \needspace{12\baselineskip}
+  \begin{center}
+  {{\large\bfseries #1}\par}
+  \end{center}
+    
+  {\noindent #2 \hfill #3 \par}
+  {\noindent #4 \hfill #5 \par}
+  
+  \medskip
+  
+  {\noindent {#6} \\ {#7}\par}
+  
+  \medskip
+  
+  {\noindent {#8}\par}
+  {\noindent {#9}\par}
+  
+  \medskip
+
+}{%
+  \bigskip
+  \hrule
+  \bigskip
+}
+
+
+\usepackage{etoolbox}
+\newcommand{\indexauthors}[1]{%
+  \forcsvlist{\index}{#1}
+}
+
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{-1}
+\pagestyle{plain}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+% front matter things
+\frontmatter
+
+% \chapter{Letter from the Director}
+% \lipsum[1-3]
+
+% \medskip
+
+% \noindent Sincerely,
+
+% \noindent Greg Llacer
+
+% \noindent Research Village Czar
+
+
+% \chapter{Letter from the Editors}
+% %\lipsum[5-8]
+
+% % \medskip
+
+% % \noindent Sincerely,
+
+% % \noindent The Editorial Board
+
+% \smallskip 
+
+% \noindent Lorem Ipsum, Editor-in-Chief \\
+% \noindent Lorem Ipsum, Editor \\
+% \noindent Lorem Ipsum, Editor \\
+
+\tableofcontents
+
+% abstracts, main.tex generated from Python script
+\mainmatter
+
+\input{abstracts.tex} % filename
+
+\backmatter
+
+% backmatter things
+% \input{abstracts/list-fellows}
+
+% index
+\renewcommand{\indexname}{Author Index}
+\printindex
+\end{document}
