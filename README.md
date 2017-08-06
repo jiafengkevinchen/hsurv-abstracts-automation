@@ -27,7 +27,7 @@ The abstract book committee took the following actions sequentially:
 
 ### TeX Files
 
-* `main.tex` includes the macro code for the `abstract` environment in LaTeX. It should be the file that you compile, using other TeX files as input
+* `main.tex` includes the macro code for the `abstract` environment in LaTeX. It should be the file that you compile, using other TeX files as input (`\input{otherfile.tex}`)
 * `abstracts.tex` should be a collection of abstract code in the format defined in `main.tex`. This should ideally be output of the code in `integrate_tex.py`. I used the following `abstract` environment format:
 
 ```latex
